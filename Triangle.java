@@ -27,24 +27,20 @@ public class Triangle implements Geometry {
         if (Math.abs(perimeterDifference) < eps) {              //Umfang ist gleich
             if (Math.abs(areaDifference) < eps) {               //Umfang und Flaeche sind gleich
                 return 0;
-            }
-            else if(areaDifference > eps) {                     //Umfang gleich, Flaeche von b kleiner
+            } else if (areaDifference > eps) {                     //Umfang gleich, Flaeche von b kleiner
                 return 1;
-            }
-            else {                                              //Umfang gleich, Flaeche von b groesser
+            } else {                                              //Umfang gleich, Flaeche von b groesser
                 return -1;
             } 
-        }
-        else {
+        } else {
             if (perimeterDifference > eps) {                    //Umfang von b kleiner
                 return 1;
-            }
-            else {                                              //Umfang von b groesser
-            return -1;
+            } else {                                              //Umfang von b groesser
+                return -1;
             }
         }    
     }
-    //Die IllegalArgumentExeption muss noch implem entiert werden.
+    //Die IllegalArgumentExeption muss noch implementiert werden.
 
     /**
     Klont das Triangle-Objekt

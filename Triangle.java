@@ -4,7 +4,7 @@ Die Klasse Triangle erzeugt ein gleichseitiges Dreieck und implementiert das Geo
 public class Triangle implements Geometry {
 
     /**
-    Lange eines einzelnen Schenkels.
+    Laenge eines einzelnen Schenkels.
     */
     private double length;
 
@@ -44,12 +44,27 @@ public class Triangle implements Geometry {
             }
         }    
     }
-}  //Die IllegalArgumentExeption muss noch implementiert werden.
+    //Die IllegalArgumentExeption muss noch implem entiert werden.
 
     /**
     Klont das Triangle-Objekt
     @return 
     */
+    
     public Triangle clone() {
-
     }
+    
+    public static double getArea() {
+    
+    double area = (length^2 * Math.sqrt(4)) / 3;
+    }
+    
+    public static double getPerimeter() {
+    
+    double perimeter = 3 * this.length;
+    return perimeter;
+    }
+    
+    public static String printType() {
+    }
+}

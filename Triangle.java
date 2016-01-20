@@ -52,11 +52,13 @@ public class Triangle implements Geometry {
     */
     
     public Triangle clone() {
+    
     }
     
     public static double getArea() {
     
-    double area = (length^2 * Math.sqrt(4)) / 3;
+    double area = (this.length * Math.sqrt(4)) / 3;
+    return area;
     }
     
     public static double getPerimeter() {

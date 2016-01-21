@@ -47,7 +47,7 @@ public class Square implements Geometry {
         double areaDifference, perimeterDifference, eps = 0.0001;
 
         if ( !(b instanceof Geometry) ) {
-            throw new IllegalArgumentExeption("Die Objekte sind nicht vergleichbar")
+            throw new IllegalArgumentExeption("Die Objekte sind nicht vergleichbar");
         } else {
 
             areaDifference = this.getArea() - b.getArea();
@@ -85,6 +85,10 @@ public class Square implements Geometry {
     @return gibt das geklone Square-Object zurueck
     */      
     public Square clone() {
+
+        if ( !(b instanceof Clonable) ) {
+            throw new CloneNotSupportedException("Die Objekte können nicht geklont werden!");
+        }
         Square A = new Square();
         A = this.Square;
         return A;

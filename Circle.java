@@ -46,7 +46,7 @@ public class Circle implements Geometry {
         double areaDifference, perimeterDifference, eps = 0.0001;
 
         if ( !(b instanceof Geometry) ) {
-            throw new IllegalArgumentExeption("Die Objekte sind nicht vergleichbar")
+            throw new IllegalArgumentExeption("Die Objekte sind nicht vergleichbar");
         } else {
         
             areaDifference = this.getArea() - b.getArea();
@@ -84,6 +84,10 @@ public class Circle implements Geometry {
     @return gibt das geklonte Object zurueck
     */      
     public Circle clone() {
+    
+        if ( !(b instanceof Clonable) ) {
+            throw new CloneNotSupportedException("Die Objekte können nicht geklont werden!");
+        }
         Circle A = new Circle();
         A = this.Circle;
         return A;

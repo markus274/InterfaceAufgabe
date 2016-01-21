@@ -51,7 +51,7 @@ public class Triangle implements Geometry {
         double areaDifference, perimeterDifference, eps = 0.0001;
 
         if ( !(b instanceof Geometry) ) {
-            throw new IllegalArgumentExeption("Die Objekte sind nicht vergleichbar")
+            throw new IllegalArgumentExeption("Die Objekte sind nicht vergleichbar");
         } else {
 
             areaDifference = this.getArea() - b.getArea();
@@ -78,16 +78,21 @@ public class Triangle implements Geometry {
     public boolean equals(Object b) {
 
         if ( !(b instanceof Triangle) ) {
-        return false;
+            return false;
         } else {
-        return (this.length == b.length);
+            return (this.length == b.length);
         }
     }
+    
     /**
     Klont das Triangle-Objekt
     @return 
     */      
     public Triangle clone() {
+
+        if ( !(b instanceof Clonable) ) {
+            throw new CloneNotSupportedException("Die Objekte können nicht geklont werden!");
+        }
         Triangle A = new Triangle();
         A = this.Triangle;
         return A;

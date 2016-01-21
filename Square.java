@@ -13,24 +13,22 @@ public class Square implements Geometry {
     /**
     Methode des Geometry-Interfaces - Berechnet den Flaecheninhalt.
     @return gibt den Flaecheninhalt als double zurueck.
-    */
-    
+    */   
     public void setA(double a) {
     
-    this.a = a;
-    
+        this.a = a;
     }
     
     public double getA() {
     
-    return this.a;
-    
+        return this.a;
     }
     
     public double getArea() {
     
-    double area = this.a * this.b;
-    return area;
+        double area = this.a * this.b;
+        
+        return area;
     }
 
     /**
@@ -115,4 +113,28 @@ public class Square implements Geometry {
             return A;
         }
     }
+
+    public boolean equals(Object b) {
+
+        if ( !(b instanceof Triangle) ) {
+            return false;
+        } else {
+            return (this.length == b.length);
+        }
+    }
+
+    /**
+    Klont das Square-Objekt
+    @return gibt das geklone Square-Object zurueck
+    */      
+    public Square clone() {
+
+        if ( !(b instanceof Clonable) ) {
+            throw new CloneNotSupportedException("Die Objekte können nicht geklont werden!");
+        }
+        Square A = new Square();
+        A = this.Square;
+        return A;
+    }
+
 }

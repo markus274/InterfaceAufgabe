@@ -31,11 +31,11 @@ public class Triangle implements Geometry {
     public String printType() {
     }
     /*
-
     /**
     Konstruktor, der die Laenge der Schenkel setzt.
     */
     public Triangle(double newLength) {
+
         this.length = newLength;
     }
 

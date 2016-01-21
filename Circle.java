@@ -13,6 +13,7 @@ public class Circle implements Geometry {
     Methode des Geometry-Interfaces - Berechnet den Flaecheninhalt.
     @return gibt den Flaecheninhalt als double zurueck.
     */
+
     public double getArea() {
     
     double area = Math.PI * this.r * this.r;
@@ -23,10 +24,12 @@ public class Circle implements Geometry {
     Methode des Geometry-Interfaces - Berechnet den Umfang.
     @return gibt den Umfang als double zurueck.
     */ 
+
     public double getPerimeter() {
     
-    double perimeter = Math.PI * 2 * this.r;
-    return perimeter;
+        double perimeter = Math.PI * 2 * this.r;
+
+        return perimeter;
     }
     
     /*
@@ -43,12 +46,14 @@ public class Circle implements Geometry {
     @param Objekt, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
     IllegalArgumentException geworfen.
     */
+
     public int compareTo(Object b) throws IllegalArgumentException {
 
         double areaDifference, perimeterDifference, eps = 0.0001;
         // Geometry c = (Geometry) b;
 
         if ( !(b instanceof Geometry) ) {
+
             throw new IllegalArgumentException("Die Objekte sind nicht vergleichbar");
         } else {
         

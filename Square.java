@@ -6,8 +6,10 @@ public class Square implements Geometry {
     Konstruktor, der die Laenge der Seiten setzt.
     */
     public Square(double newA) {
+    
         this.a = newA;
         this.b = newA;
+        
     }
 
     /**
@@ -17,11 +19,13 @@ public class Square implements Geometry {
     public void setA(double a) {
     
         this.a = a;
+        
     }
     
     public double getA() {
     
         return this.a;
+        
     }
     
     public double getArea() {
@@ -37,12 +41,16 @@ public class Square implements Geometry {
     */     
     public double getPerimeter() {
     
-    double perimeter = 2 * this.a + 2 * this.b;
-    return perimeter;
+        double perimeter = 2 * this.a + 2 * this.b;
+        
+        return perimeter;
+        
     }
     
     public String printType() {
+    
         return this.getClass().getSimpleName();
+        
     }
     
     /**
@@ -113,28 +121,4 @@ public class Square implements Geometry {
             return A;
         }
     }
-
-    public boolean equals(Object b) {
-
-        if ( !(b instanceof Triangle) ) {
-            return false;
-        } else {
-            return (this.length == b.length);
-        }
-    }
-
-    /**
-    Klont das Square-Objekt
-    @return gibt das geklone Square-Object zurueck
-    */      
-    public Square clone() {
-
-        if ( !(b instanceof Clonable) ) {
-            throw new CloneNotSupportedException("Die Objekte können nicht geklont werden!");
-        }
-        Square A = new Square();
-        A = this.Square;
-        return A;
-    }
-
 }

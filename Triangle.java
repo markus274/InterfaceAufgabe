@@ -15,7 +15,9 @@ public class Triangle implements Geometry {
     public double getArea() {
     
         double area = (this.length * Math.sqrt(4)) / 3;
+        
         return area;
+        
     }
     /**
     Methode des Geometry-Interfaces - Berechnet den Umfang.
@@ -23,20 +25,25 @@ public class Triangle implements Geometry {
     */    
     public double getPerimeter() {
     
-    double perimeter = 3 * this.length;
-    return perimeter;
+        double perimeter = 3 * this.length;
+        
+        return perimeter;
+        
     }
     
-    /*
     public String printType() {
+    
+        return this.getClass().getSimpleName();
+        
     }
-    /*
+
     /**
     Konstruktor, der die Laenge der Schenkel setzt.
     */
     public Triangle(double newLength) {
 
         this.length = newLength;
+        
     }
 
     /**

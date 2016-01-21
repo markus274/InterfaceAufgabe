@@ -9,6 +9,13 @@ public class Triangle implements Geometry {
     private double length;
 
     /**
+    Konstruktor, der die Laenge der Schenkel setzt.
+    */
+    public Triangle(double newLength) {
+        this.length = newlength;
+    }
+
+    /**
     Methode des Comparable Interfaces, die ein Objekt der Klasse Triangle mit dem uebergebenen Objekt b vergleicht.
     @param Objekt einer Klasse, die das Geometry-Interface implementiert.
     @return 0, wenn die Flaeche und Umfang gleich sind.
@@ -17,7 +24,7 @@ public class Triangle implements Geometry {
     @param Objekt, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
     IllegalArgumentException geworfen.
     */
-    public int compareTo(Geometry b) {                      //wie wird ein allgemeines Objekt übergeben?
+    public int compareTo(Object b) {                      //wie wird ein allgemeines Objekt übergeben?
 
         double areaDifference, perimeterDifference, eps = 0.0001;
 

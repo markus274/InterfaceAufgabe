@@ -2,6 +2,13 @@ public class Circle implements Geometry {
 
     double r;
 
+    /**
+    Konstruktor, der den Radius setzt.
+    */
+    public Circle(double newR) {
+        this.r = r;
+    }
+
     public static double getArea() {
     
     double area = Math.pi() * this.r * this.r;
@@ -18,7 +25,7 @@ public class Circle implements Geometry {
     }
     
     /**
-    Methode des Comparable Interfaces, die ein Objekt der Klasse Triangle mit dem uebergebenen Objekt b vergleicht.
+    Methode des Comparable Interfaces, die ein Objekt der Klasse Circle mit dem uebergebenen Objekt b vergleicht.
     @param Objekt einer Klasse, die das Geometry-Interface implementiert.
     @return 0, wenn die Flaeche und Umfang gleich sind.
     @return negativer Wert, wenn das aktuelle Objekt kleiner ist als das uebergebene Objekt b.

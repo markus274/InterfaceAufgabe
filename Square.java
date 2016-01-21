@@ -2,6 +2,14 @@ public class Square implements Geometry {
 
     double a,b;
 
+    /**
+    Konstruktor, der die Laenge der Seiten setzt.
+    */
+    public Square(double newA) {
+        this.a = newA;
+        this.b = newA;
+    }
+
     public static double getArea() {
     
     double area = this.a * this.b;
@@ -18,7 +26,7 @@ public class Square implements Geometry {
     }
     
     /**
-    Methode des Comparable Interfaces, die ein Objekt der Klasse Triangle mit dem uebergebenen Objekt b vergleicht.
+    Methode des Comparable Interfaces, die ein Objekt der Klasse Square mit dem uebergebenen Objekt b vergleicht.
     @param Objekt einer Klasse, die das Geometry-Interface implementiert.
     @return 0, wenn die Flaeche und Umfang gleich sind.
     @return negativer Wert, wenn das aktuelle Objekt kleiner ist als das uebergebene Objekt b.

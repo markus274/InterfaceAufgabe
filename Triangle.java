@@ -52,10 +52,11 @@ public class Triangle implements Geometry {
     /**
     Klont das Triangle-Objekt
     @return 
-    */
-    
+    */      
     public Triangle clone() {
-    
+        Triangle A = new Triangle();
+        A = this.Triangle;
+        return A;
     }
     
     public static double getArea() {

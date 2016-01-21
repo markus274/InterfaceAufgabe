@@ -33,7 +33,7 @@ public class Circle implements Geometry {
     @param Objekt, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
     IllegalArgumentException geworfen.
     */
-    public int compareTo(Geometry b) {                      //wie wird ein allgemeines Objekt übergeben?
+    public int compareTo(Object b) {                      //wie wird ein allgemeines Objekt übergeben?
 
         double areaDifference, perimeterDifference, eps = 0.0001;
 
@@ -56,5 +56,13 @@ public class Circle implements Geometry {
             }
         }    
     }
-    
+    /**
+    Klont das Circle-Objekt
+    @return gibt das geklonte Object zurueck
+    */      
+    public Circle clone() {
+        Circle A = new Circle();
+        A = this.Circle;
+        return A;
+    }    
 }

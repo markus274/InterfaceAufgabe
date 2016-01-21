@@ -34,7 +34,7 @@ public class Square implements Geometry {
     @param Objekt, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
     IllegalArgumentException geworfen.
     */
-    public int compareTo(Geometry b) {                      //wie wird ein allgemeines Objekt übergeben?
+    public int compareTo(Object b) {                      //wie wird ein allgemeines Objekt übergeben?
 
         double areaDifference, perimeterDifference, eps = 0.0001;
 
@@ -57,4 +57,14 @@ public class Square implements Geometry {
             }
         }    
     }
+    /**
+    Klont das Square-Objekt
+    @return gibt das geklone Square-Object zurueck
+    */      
+    public Square clone() {
+        Square A = new Square();
+        A = this.Square;
+        return A;
+    }
+
 }

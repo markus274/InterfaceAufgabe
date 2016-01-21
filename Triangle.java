@@ -14,7 +14,7 @@ public class Triangle implements Geometry {
     */
     public double getArea() {
     
-        double area = (this.length * Math.sqrt(4)) / 3;
+        double area = (this.length * this.length * Math.sqrt(3)) / 4;
         
         return area;
         

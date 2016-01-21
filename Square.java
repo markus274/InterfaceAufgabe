@@ -10,12 +10,20 @@ public class Square implements Geometry {
         this.b = newA;
     }
 
+    /**
+    Methode des Geometry-Interfaces - Berechnet den Flaecheninhalt.
+    @return gibt den Flaecheninhalt als double zurueck.
+    */
     public static double getArea() {
     
     double area = this.a * this.b;
     return area;
     }
-    
+
+    /**
+    Methode des Geometry-Interfaces - Berechnet den Umfang.
+    @return gibt den Umfang als double zurueck.
+    */     
     public static double getPerimeter() {
     
     double perimeter = 2 * this.a + 2 * this.b;
@@ -57,6 +65,16 @@ public class Square implements Geometry {
             }
         }    
     }
+
+    public boolean equals(Object b) {
+
+        if ( !(b instanceof Triangle) ) {
+        return false;
+        } else {
+        return (this.length == b.length);
+        }
+    }
+
     /**
     Klont das Square-Objekt
     @return gibt das geklone Square-Object zurueck

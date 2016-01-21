@@ -6,15 +6,23 @@ public class Circle implements Geometry {
     Konstruktor, der den Radius setzt.
     */
     public Circle(double newR) {
-        this.r = r;
+        this.r = newR;
     }
 
+    /**
+    Methode des Geometry-Interfaces - Berechnet den Flaecheninhalt.
+    @return gibt den Flaecheninhalt als double zurueck.
+    */
     public static double getArea() {
     
     double area = Math.pi() * this.r * this.r;
     return area;
     }
-    
+
+    /**
+    Methode des Geometry-Interfaces - Berechnet den Umfang.
+    @return gibt den Umfang als double zurueck.
+    */ 
     public static double getPerimeter() {
     
     double perimeter = Math.pi() * 2 * this.r;
@@ -56,6 +64,16 @@ public class Circle implements Geometry {
             }
         }    
     }
+
+    public boolean equals(Object b) {
+
+        if ( !(b instanceof Circle) ) {
+        return false;
+        } else {
+        return (this.length == b.length);
+        }
+    }
+        
     /**
     Klont das Circle-Objekt
     @return gibt das geklonte Object zurueck

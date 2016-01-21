@@ -7,6 +7,28 @@ public class Triangle implements Geometry {
     Laenge eines einzelnen Schenkels.
     */
     private double length;
+    
+    /**
+    Methode des Geometry-Interfaces - Berechnet den Flaecheninhalt.
+    @return gibt den Flaecheninhalt als double zurueck.
+    */
+    public static double getArea() {
+    
+        double area = (this.length * Math.sqrt(4)) / 3;
+        return area;
+    }
+    /**
+    Methode des Geometry-Interfaces - Berechnet den Umfang.
+    @return gibt den Umfang als double zurueck.
+    */    
+    public static double getPerimeter() {
+    
+    double perimeter = 3 * this.length;
+    return perimeter;
+    }
+    
+    public static String printType() {
+    }
 
     /**
     Konstruktor, der die Laenge der Schenkel setzt.
@@ -49,6 +71,14 @@ public class Triangle implements Geometry {
     }
     //Die IllegalArgumentExeption muss noch implementiert werden.
 
+    public boolean equals(Object b) {
+
+        if ( !(b instanceof Triangle) ) {
+        return false;
+        } else {
+        return (this.length == b.length);
+        }
+    }
     /**
     Klont das Triangle-Objekt
     @return 
@@ -58,19 +88,5 @@ public class Triangle implements Geometry {
         A = this.Triangle;
         return A;
     }
-    
-    public static double getArea() {
-    
-    double area = (this.length * Math.sqrt(4)) / 3;
-    return area;
-    }
-    
-    public static double getPerimeter() {
-    
-    double perimeter = 3 * this.length;
-    return perimeter;
-    }
-    
-    public static String printType() {
-    }
+
 }

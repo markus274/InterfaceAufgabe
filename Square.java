@@ -46,24 +46,29 @@ public class Square implements Geometry {
 
         double areaDifference, perimeterDifference, eps = 0.0001;
 
-        areaDifference = this.getArea() - b.getArea();
-        perimeterDifference = this.getPerimeter() - b.getPerimeter();
-        
-        if (Math.abs(perimeterDifference) < eps) {              //Umfang ist gleich
-            if (Math.abs(areaDifference) < eps) {               //Umfang und Flaeche sind gleich
-                return 0;
-            } else if (areaDifference > eps) {                     //Umfang gleich, Flaeche von b kleiner
-                return 1;
-            } else {                                              //Umfang gleich, Flaeche von b groesser
-                return -1;
-            } 
+        if ( !(b instanceof Geometry) ) {
+            throw new IllegalArgumentExeption("Die Objekte sind nicht vergleichbar")
         } else {
-            if (perimeterDifference > eps) {                    //Umfang von b kleiner
-                return 1;
-            } else {                                              //Umfang von b groesser
-                return -1;
-            }
-        }    
+
+            areaDifference = this.getArea() - b.getArea();
+            perimeterDifference = this.getPerimeter() - b.getPerimeter();
+            
+            if (Math.abs(perimeterDifference) < eps) {              //Umfang ist gleich
+                if (Math.abs(areaDifference) < eps) {               //Umfang und Flaeche sind gleich
+                    return 0;
+                } else if (areaDifference > eps) {                     //Umfang gleich, Flaeche von b kleiner
+                    return 1;
+                } else {                                              //Umfang gleich, Flaeche von b groesser
+                    return -1;
+                } 
+            } else {
+                if (perimeterDifference > eps) {                    //Umfang von b kleiner
+                    return 1;
+                } else {                                              //Umfang von b groesser
+                    return -1;
+                }
+            }    
+        }
     }
 
     public boolean equals(Object b) {

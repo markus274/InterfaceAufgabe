@@ -1,7 +1,8 @@
 public class Test {
     public static void main(String[] args) {
         Square square = new Square(42);
-        if (square.clone().getArea() != 1764.0)
+        System.out.println(square.printType());
+        /*if (square.clone().getArea() != 1764.0)
             System.err.println("square: wrong area");
         if (square.clone().getPerimeter() != 168.0)
             System.err.println("square: wrong perimeter");
@@ -13,6 +14,6 @@ public class Test {
         if (triangle.getArea() != 1357.9278331339997)
             System.err.println("triangle: wrong area");
         if (triangle.compareTo(square) >= 0)
-            System.err.println("wrong compareTo");
+            System.err.println("wrong compareTo");*/
     }
 }

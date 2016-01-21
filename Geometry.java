@@ -3,16 +3,16 @@ public interface Geometry extends Comparable, Cloneable {
     /**
     Berechnet Flaeche des Objektes.
     */
-    double getArea();
+    public double getArea();
     
     /**
     Berechnet Umfang des Objektes.
     */
-    double getPerimeter();
+    public double getPerimeter();
     /**
     Gibt Klassennamen als String zurück.
     */
-    default String printType() {
+    public default String printType() {
         return this.getClass().getSimpleName();
     }
 }

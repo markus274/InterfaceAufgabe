@@ -36,7 +36,7 @@ public class Circle implements Geometry {
     }
     
     
-    public static String printType() {
+    public String printType() {
     
         return this.getClass().getSimpleName();
         

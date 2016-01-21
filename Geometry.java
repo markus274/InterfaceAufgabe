@@ -13,5 +13,5 @@ public interface Geometry extends Comparable, Cloneable {
     /**
     Gibt Klassennamen als String zurück.
     */
-    public default String printType();
+    public String printType();
 }

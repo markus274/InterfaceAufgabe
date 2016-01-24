@@ -1,5 +1,6 @@
 /**
 Die Klasse Triangle erzeugt ein gleichseitiges Dreieck und implementiert das Geometry-Interface.
+@author David Nancekievill MATRIKELNUMMER Gruppe 9c
 */
 public class Triangle implements Geometry {
 
@@ -19,6 +20,7 @@ public class Triangle implements Geometry {
         return area;
         
     }
+    
     /**
     Methode des Geometry-Interfaces - Berechnet den Umfang.
     @return gibt den Umfang als double zurueck.
@@ -31,6 +33,10 @@ public class Triangle implements Geometry {
         
     }
     
+    /**
+    Methode gibt den Klassennamen des Objektes als String zurueck.
+    @return Klassenname als String
+    */
     public String printType() {
     
         return this.getClass().getSimpleName();
@@ -39,6 +45,7 @@ public class Triangle implements Geometry {
 
     /**
     Konstruktor, der die Laenge der Schenkel setzt.
+    @param newLength Seitenlaenge mit der das Objekt initialisiert werden soll.
     */
     public Triangle(double newLength) {
 
@@ -47,13 +54,14 @@ public class Triangle implements Geometry {
     }
 
     /**
-    Methode des Comparable Interfaces, die ein Objekt der Klasse Triangle mit dem uebergebenen Objekt b vergleicht.
-    @param Objekt einer Klasse, die das Geometry-Interface implementiert.
-    @return 0, wenn die Flaeche und Umfang gleich sind.
-    @return negativer Wert, wenn das aktuelle Objekt kleiner ist als das uebergebene Objekt b.
-    @retrun positiver Wert, wenn das aktuelle Objekt grosser ist als das uebergebene Objekt b.
-    @param Objekt, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
+    Methode des Comparable Interfaces, die ein Objekt der Klasse Circle mit dem uebergebenen Objekt b
+    vergleicht, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
     IllegalArgumentException geworfen.
+    @param b einer Klasse, die das Geometry-Interface implementiert.
+    @return 0, wenn die Flaeche und Umfang gleich sind,
+    negativer Wert, wenn das aktuelle Objekt kleiner ist als das uebergebene Objekt b,
+    positiver Wert, wenn das aktuelle Objekt grosser ist als das uebergebene Objekt b.
+    @throws IllegalArgumentException Objekt kann nicht verglichen werden
     */
     public int compareTo(Object b) throws IllegalArgumentException {
 
@@ -86,7 +94,12 @@ public class Triangle implements Geometry {
             }    
         }
     }
-
+    
+    /**
+    Vergleicht zwei Objekte
+    @param b Objekt mit dem die aufrufende Circle Instanz verglichen werden soll 
+    @return false falls die Objekte sich nicht gleichen, true falls doch.
+    */
     public boolean equals(Object b) {
         
         double eps = 0.0001, objectDifference;
@@ -102,16 +115,17 @@ public class Triangle implements Geometry {
     }
     
     /**
-    Klont das Triangle-Objekt
-    @return 
-    */      
+    Klont das Circle-Objekt
+    @return gibt das geklonte Object zurueck
+    @throws CloneNotSupportedException Objekt kann nicht geklont werden
+    */  
     public Triangle clone() throws CloneNotSupportedException {
 
         if ( !(this instanceof Cloneable) ) {
             throw new CloneNotSupportedException();
         } else {
-            Triangle A = new Triangle(this.length);
-            return A;
+            Triangle a = new Triangle(this.length);
+            return a;
         }
     }
 }

@@ -1,9 +1,17 @@
+/**
+Klasse Square, erbt von Geometry. Instanziiert ein Quadrat mit der Seitenlaenge a.
+@author David Nancekievill MATRIKELNUMMER Gruppe 9c
+*/
 public class Square implements Geometry {
 
-    double a,b;
+    /**
+    Seitenlaenge des Quadrats.
+    */
+    private double a, b;
 
     /**
     Konstruktor, der die Laenge der Seiten setzt.
+    @param newA Seitenlaenge mit der das Objekt initialisiert werden soll.
     */
     public Square(double newA) {
     
@@ -13,21 +21,28 @@ public class Square implements Geometry {
     }
 
     /**
-    Methode des Geometry-Interfaces - Berechnet den Flaecheninhalt.
-    @return gibt den Flaecheninhalt als double zurueck.
-    */   
+    set-Methode für die Seitenlaenge a.
+    @param a Erwartet Seitenlaenge a als double.
+    */ 
     public void setA(double a) {
     
         this.a = a;
         
     }
-    
+    /**
+    get-Methode für die Seitenlaenge a.
+    @return gibt die Seitenlaenge als double zurueck.
+    */
     public double getA() {
     
         return this.a;
         
     }
     
+    /**
+    Methode des Geometry-Interfaces - Berechnet den Flaecheninhalt.
+    @return gibt den Flaecheninhalt als double zurueck.
+    */  
     public double getArea() {
     
         double area = this.a * this.b;
@@ -47,6 +62,10 @@ public class Square implements Geometry {
         
     }
     
+    /**
+    Methode gibt den Klassennamen des Objektes als String zurueck.
+    @return Klassenname als String
+    */
     public String printType() {
     
         return this.getClass().getSimpleName();
@@ -54,18 +73,18 @@ public class Square implements Geometry {
     }
     
     /**
-    Methode des Comparable Interfaces, die ein Objekt der Klasse Square mit dem uebergebenen Objekt b vergleicht.
-    @param Objekt einer Klasse, die das Geometry-Interface implementiert.
-    @return 0, wenn die Flaeche und Umfang gleich sind.
-    @return negativer Wert, wenn das aktuelle Objekt kleiner ist als das uebergebene Objekt b.
-    @return positiver Wert, wenn das aktuelle Objekt grosser ist als das uebergebene Objekt b.
-    @param Objekt, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
+    Methode des Comparable Interfaces, die ein Objekt der Klasse Circle mit dem uebergebenen Objekt b
+    vergleicht, welches das Geometry-Interface implementiert hat. Ist das nicht der Fall, wird eine
     IllegalArgumentException geworfen.
+    @param b einer Klasse, die das Geometry-Interface implementiert.
+    @return 0, wenn die Flaeche und Umfang gleich sind,
+    negativer Wert, wenn das aktuelle Objekt kleiner ist als das uebergebene Objekt b,
+    positiver Wert, wenn das aktuelle Objekt grosser ist als das uebergebene Objekt b.
+    @throws IllegalArgumentException Objekt kann nicht verglichen werden
     */
     public int compareTo(Object b) throws IllegalArgumentException {
 
         double areaDifference, perimeterDifference, eps = 0.0001;
-        // Geometry c = (Geometry) b;
 
         if ( !(b instanceof Geometry) ) {
             throw new IllegalArgumentException("Die Objekte sind nicht vergleichbar");
@@ -93,7 +112,12 @@ public class Square implements Geometry {
             }    
         }
     }
-
+    
+    /**
+    Vergleicht zwei Objekte
+    @param b Objekt mit dem die aufrufende Circle Instanz verglichen werden soll 
+    @return false falls die Objekte sich nicht gleichen, true falls doch.
+    */
     public boolean equals(Object b) {
         
         double eps = 0.0001, objectDifference;
@@ -109,16 +133,17 @@ public class Square implements Geometry {
     }
 
     /**
-    Klont das Square-Objekt
-    @return gibt das geklone Square-Object zurueck
-    */      
+    Klont das Circle-Objekt
+    @return gibt das geklonte Object zurueck
+    @throws CloneNotSupportedException Objekt kann nicht geklont werden
+    */   
     public Square clone() throws CloneNotSupportedException {
 
         if ( !(this instanceof Cloneable) ) {
             throw new CloneNotSupportedException();
         } else {
-            Square A = new Square(this.a);
-            return A;
+            Square a = new Square(this.a);
+            return a;
         }
     }
 }
